@@ -4,7 +4,7 @@ public class Person {
     protected int age;
     protected String address;
 
-    public Person (PersonBuilder builder) {
+    public Person(PersonBuilder builder) {
         this.name = builder.name;
         this.surname = builder.surname;
         this.age = builder.age;
@@ -28,21 +28,25 @@ public class Person {
     public String getName() {
         return name;
     }
+
     public String getSurname() {
         return surname;
     }
+
     public int getAge() {
         return age;
     }
+
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         if (!hasAddress()) {
-            this.address=address;
+            this.address = address;
         }
     }
+
     public void happyBirthday() {
         if (!hasAge()) {
             age++;
@@ -60,6 +64,7 @@ public class Person {
     public String toString() {
         return this.name + " " + this.surname + "; Возраст: " + this.age + "; Адрес: " + this.address;
     }
+
     @Override
     public int hashCode() {
         return 0;

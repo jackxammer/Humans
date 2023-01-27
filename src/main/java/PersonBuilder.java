@@ -8,13 +8,14 @@ public class PersonBuilder {
         this.name = name;
         return this;
     }
-    public PersonBuilder setSurname (String surname) {
+
+    public PersonBuilder setSurname(String surname) {
         this.surname = surname;
         return this;
     }
 
     public PersonBuilder setAge(int age) throws BadValueException {
-        if (age >= 0){
+        if (age >= 0) {
             this.age = age;
             return this;
         } else {
@@ -22,6 +23,7 @@ public class PersonBuilder {
         }
 
     }
+
     public PersonBuilder setAddress(String address) {
         this.address = address;
         return this;
@@ -29,7 +31,7 @@ public class PersonBuilder {
 
     public Person build() throws LackOfDataException {
         Person person = new Person(this);
-        if(person.getSurname() == null || person.getName() == null) {
+        if (person.getSurname() == null || person.getName() == null) {
             throw new LackOfDataException("Не введены обязательные данные");
         } else {
             return person;
